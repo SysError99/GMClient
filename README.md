@@ -80,7 +80,7 @@ do {
     // When Touch begins, like mouse_check_button_pressed()
     touch_start_id = touch_start();  //get ID of each touch
 
-    if(touch_start_id > -1){ //if touch exists
+    if (touch_start_id > -1) { //if touch exists
         // Usage Example
         draw_sprite(spr_test, 1, touch_x(touch_start_id), touch_y(touch_start_id));
         draw_set_font(font_default);
@@ -93,7 +93,7 @@ do {
     // When Touch ends, like mouse_check_button_released()
     touch_end_id = touch_end(); //get ID of each touch
 
-    if(touch_end_id > -1){
+    if (touch_end_id > -1) {
         // Usage Example
         draw_sprite(spr_test, 2, touch_x(touch_end_id), touch_y(touch_end_id));
         draw_set_font(font_default);
@@ -105,7 +105,7 @@ do {
     // When Touch continuously happens (holding), like mouse_check_button()
     touch_move_id = touch_move(); //get ID of each touch
 
-    if(touch_move_id > -1){
+    if (touch_move_id > -1) {
         // Usage Example
         draw_sprite(spr_test,0,touch_x(touch_move_id),touch_y(touch_move_id));
         draw_set_font(font_default);
@@ -127,13 +127,13 @@ var touch_move_id;
 
 do {
     touch_start_id = touch_start();
-    if(touch_start_id > -1){
+    if (touch_start_id > -1) {
         // Set global values for instances.
         global.touch_id = touch_start_id;
         global.touch_x = touch_x(touch_start_id);
         global.touch_y = touch_y(touch_start_id);
         // Call instances
-        with(obj_joystick){
+        with(obj_joystick) {
             event_perform("ev_mouse","ev_left_press");
             // then use global variables
         }
@@ -142,13 +142,13 @@ do {
 
 do {
     touch_end_id = touch_end();
-    if(touch_end_id > -1){
+    if (touch_end_id > -1) {
         // Set global values for instances.
         global.touch_id = touch_start_id;
         global.touch_x = touch_x(touch_start_id);
         global.touch_y = touch_y(touch_start_id);
         // Call instances
-        with(obj_joystick){
+        with(obj_joystick) {
             event_perform("ev_mouse","ev_left_release");
         }
     }
@@ -156,13 +156,13 @@ do {
 
 do {
     touch_move_id = touch_move();
-    if(touch_move_id > -1){
+    if (touch_move_id > -1) {
         // Set global values for instances.
         global.touch_id = touch_start_id;
         global.touch_x = touch_x(touch_start_id);
         global.touch_y = touch_y(touch_start_id);
         // Call instances
-        with(obj_joystick){
+        with(obj_joystick) {
             event_perform("ev_mouse","ev_left_button);
         }
     }
