@@ -8,6 +8,7 @@ Compress this project as `7-Zip` archive, then change its extension from `.7z` t
 Import file to the project and start using it!
 
 If you want to use this extension for networking via WebSocket, just change network location of `webSocketAddress` inside `./client/client.js` to your server address.
+
 ---
 
 # References
@@ -45,7 +46,8 @@ This category indicates functions for load and save strings into browser's local
 This category indicates functions for communicating with a web server via WebSocket.
 1. `network_open()` Connect to a server with an address specified inside of file `./client/client.js`.
 2. `network_receive()` Retreives any message that server have sent to the client. You should put this command inside `Step` loop to continuously retrieve anything from the server or connection status. Returns empty string when there is nothing happend. Returns connection status when there is a report of connection status. Returns string of data when there is some data received from a server.
-#### Connection Status
+
+Connection Status:
  - `connected` Happens when a connection is established.
  - `error` Happens when there is an error occured.
  - `close` Happens when a connection is closed.
