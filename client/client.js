@@ -6,6 +6,18 @@
  */
 var highDPI = true;
 /**
+ * Game orientation mode:
+ * "any"
+ * "natural"
+ * "landscape"
+ * "portrait"
+ * "portrait-primary"
+ * "portrait-secondary"
+ * "landscape-primary"
+ * "landscape-secondary"
+ */
+var orientationMode = "landscape";
+/**
  * Assign your server URL address here!
  */
 var webSocketAddress = "ws://192.168.1.200:8080";
@@ -440,7 +452,19 @@ function touchClean() {
     }
 }
 
-// - - - - - - - - - configure DPI - - - - - - - - -
+// - - - - - - - - - Configure Cordova's Full-screen - - - - - - - - -
+if (typeof AndroidFullScreen !== 'undefined') {
+	AndroidFullScreen.immersiveMode(successFunction, errorFunction);
+}
+
+// - - - - - - - - - Configure Screen orientation - - - - - - - - -
+if (typeof screen.orientation !== "undefined") {
+	if (typeof screen.orientation.lock !== "undefined") {
+		screen.orientation.lock(orientationMode);
+	}
+}
+
+// - - - - - - - - - Configure DPI - - - - - - - - -
 if (highDPI) {
 	var viewport = document.querySelector("meta[name=viewport]");
 

@@ -1,7 +1,17 @@
 # GMClient
 An extension made for enhancing GameMaker:Studio 1.4 features and prolong its lifetime.
----
 
+This plugin mainly supports majority of browsers, some features of Cordova and its plug-ins, and SysError99's WebApp.
+
+---
+# Notes for Cordova
+If you want to export the project for Cordova, these are required to operate the app correctly:
+ - [cordova-ios-fullscreen](https://github.com/innowatio/cordova-ios-fullscreen.git) (iOS)
+ - cordova-plugin-fullscreen (Android)
+ - cordova-plugin-screen-orientation
+ - cordova-plugin-viewport
+
+---
 # Usage
 Compress this project as `7-Zip` archive, then change its extension from `.7z` to `.gmez`.
 
@@ -10,7 +20,6 @@ Import file to the project and start using it!
 If you want to use this extension for networking via WebSocket, just change network location of `webSocketAddress` inside `./client/client.js` to your server address.
 
 ---
-
 # References
 There are plenty of command you can use in GML, as shown below:
 
@@ -263,3 +272,7 @@ if (incorrect_orientation) {
 }
 
 ```
+
+---
+# Future Releases
+In further release there will be some of more features supported, like IAP, and monetization. But that's just been very far and requires some of my requirements to fulfill it in. Still, there are a lot of work, but it will eventually happen when my demand rises up.
