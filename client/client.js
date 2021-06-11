@@ -176,23 +176,7 @@ function closeFullScreen() {
  * @returns {number} is it fullscreen?
  */
 function isFullScreen() {
-	return window.innerWidth / screen.width > 0.9 && window.innerHeight / screen.height > 0.9;
-}
-
-/**
- * Returns current browser width.
- * @returns {number} Current browser width.
- */
-function windowInnerWidth() {
-	return window.innerWidth;
-}
-
-/**
- * Returns current browser height.
- * @returns {number} Current browser height.
- */
-function windowInnerHeight() {
-	return window.innerHeight;
+	return window.innerWidth / screen.width > 0.975 && window.innerHeight / screen.height > 0.975;
 }
 
 // - - - - - - - - - - Local Storage - - - - - - - - - -
