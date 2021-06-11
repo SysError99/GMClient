@@ -176,7 +176,10 @@ function closeFullScreen() {
  * @returns {number} is it fullscreen?
  */
 function isFullScreen() {
-	return window.innerWidth / screen.width > 0.975 && window.innerHeight / screen.height > 0.975;
+	if (screen.width / screen.height < 1)
+		return window.innerWidth / (screen.width * window.devicePixelRatio) > 0.9;
+
+	return window.innerHeight / (screen.height * window.devicePixelRatio) > 0.9;
 }
 
 // - - - - - - - - - - Local Storage - - - - - - - - - -
