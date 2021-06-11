@@ -182,4 +182,82 @@ do {
 touch_clean(); //end touch instance.
 
 ```
+---
 
+# Examples
+This section shows an example of use cases of this extension
+
+## Automatic scaling & rotation warning
+Create an object, then put all of these codes for each sections.
+
+1. Create:
+```javascript
+// Resolution
+game_width = 1600;
+game_height = 900;
+
+surface_current_width = 1;
+surface_current_height = 1;
+
+window_width = game_width;
+window_height = game_height;
+
+// Incorrect orientation variables
+browser_refreshed = false;
+incorrect_orientation = false;
+
+// Check incorrect orientation
+if (browser_width / browser_height < 1)
+    incorrect_orientation = true;
+
+```
+
+2. Step:
+```javascript
+// Any mouse interactions will make the game full-screen on broewser.
+if (mouse_check_button_pressed(mb_left))
+    full_screen();
+
+// Resolution
+if (window_width != browser_width ||
+    window_height != browser_height) { 
+    var browser_scale = browser_height / (game_height + 10);
+    var width_scale = floor(browser_scale * game_width);
+    
+    if(width_scale > browser_width){
+        browser_scale = browser_width / (game_width + 10);
+        width_scale = floor(browser_scale * game_width);
+    }
+    
+    var height_scale = floor(browser_scale * game_height);
+
+    window_width = browser_width;
+    window_height = browser_height;
+    window_set_size(width_scale, height_scale);
+    window_center();
+}
+
+// Surface scaling, referred from room size.
+if (room_width != surface_current_width ||
+    room_height != surface_current_height) {
+    surface_current_width = room_width;
+    surface_current_height = room_height;
+    surface_resize(application_surface, surface_current_width, surface_current_height);
+}
+
+// Warn incorrect orientation
+if (incorrect_orientation) {
+    if (room != room_rotate) {
+        prev_room = room;
+        room_goto(room_rotate); /// go to the room that will tell user to rotate the screen.
+    }
+    
+    if (browser_width / browser_height >= 1) {
+        if (!browser_refreshed) { 
+            browser_reload();
+            browser_refreshed = true; // Stop the game to refresh the browser once again.
+        }
+    }
+}
+
+```
