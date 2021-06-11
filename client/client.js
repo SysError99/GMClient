@@ -454,7 +454,11 @@ function touchClean() {
 
 // - - - - - - - - - Configure Cordova's Full-screen - - - - - - - - -
 if (typeof AndroidFullScreen !== 'undefined') {
-	AndroidFullScreen.immersiveMode(successFunction, errorFunction);
+	AndroidFullScreen.immersiveMode(function() {
+		console.log("Immersive mode enabled.");
+	}, function() {
+		console.error("Immersive mode failed to load");
+	});
 }
 
 // - - - - - - - - - Configure Screen orientation - - - - - - - - -
