@@ -110,6 +110,15 @@
           <argCount>-1</argCount>
           <args/>
         </function>
+        <function>
+          <name>is_full_screen</name>
+          <externalName>isFullScreen</externalName>
+          <kind>11</kind>
+          <help>()</help>
+          <returnType>2</returnType>
+          <argCount>-1</argCount>
+          <args/>
+        </function>
         <!--LocalStorage-->
         <function>
           <name>load_data</name>

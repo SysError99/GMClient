@@ -33,7 +33,8 @@ This category indicates functions related to browesr, necessary if this game is 
 2. `dialog_alert(text:string)` Shows native dialog. This returns void.
 3. `dialog_confirm(text:string ,hint:string)` Shows confirmation dialog. This returns text. But if this is 
 4. `dialog_prompt(text:string, default:string)` Shows prompt dialog.
-5. `full_screen()` Triggers canvas full-screen mode for the canvas. Returns 1 (number) if full-screen is successful, and 0 (number) if failed.
+5. `full_screen()` Triggers canvas full-screen mode for the canvas. Returns 1 (number) if full-screen is successful, and 0 (number) if failed. (unreliable if in `highDPI`)
+6. `is_full_screen()` Checks if the screen is full-screen, 1 if true, and 0 if false. (unreliable if in `highDPI`)
 
 ### Local Storage
 This category indicates functions for load and save strings into browser's local storage (Can be used with SysError99's WebApp)
