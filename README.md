@@ -28,11 +28,12 @@ This category indicates functions related to media audio player.
 2. `audio_stop()` Stops currently playing audio media.
 
 ### Browser
-This category indicates functions related to dialogs, necessary if this game is running via SysError99's WebApp
-1. `dialog_alert(text:string)` Shows native dialog. This returns void.
-2. `dialog_confirm(text:string ,hint:string)` Shows confirmation dialog. This returns text. But if this is 
-3. `dialog_prompt(text:string, default:string)` Shows prompt dialog.
-4. `full_screen()` Triggers canvas full-screen mode for the canvas. Returns 1 (number) if full-screen is successful, and 0 (number) if failed.
+This category indicates functions related to browesr, necessary if this game is running via SysError99's WebApp
+1. `browser_reload()` Reloads a browser.
+2. `dialog_alert(text:string)` Shows native dialog. This returns void.
+3. `dialog_confirm(text:string ,hint:string)` Shows confirmation dialog. This returns text. But if this is 
+4. `dialog_prompt(text:string, default:string)` Shows prompt dialog.
+5. `full_screen()` Triggers canvas full-screen mode for the canvas. Returns 1 (number) if full-screen is successful, and 0 (number) if failed.
 
 ### Local Storage
 This category indicates functions for load and save strings into browser's local storage (Can be used with SysError99's WebApp)

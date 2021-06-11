@@ -66,6 +66,15 @@
         </function>
         <!--Browser-->
         <function>
+          <name>browser_reload</name>
+          <externalName>browserReload</externalName>
+          <kind>11</kind>
+          <help>()</help>
+          <returnType>2</returnType>
+          <argCount>-1</argCount>
+          <args/>
+        </function>
+        <function>
           <name>dialog_prompt</name>
           <externalName>dialogPrompt</externalName>
           <kind>11</kind>

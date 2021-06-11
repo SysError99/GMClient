@@ -67,6 +67,13 @@ function audioStop() {
 
 // - - - - - - - - - - Browser - - - - - - - - - -
 /**
+ * Reload the page
+ */
+ function browserReload() {
+	window.location.reload();
+}
+
+/**
  * Show system alert dialog
  * @param {string} str text string
  */
