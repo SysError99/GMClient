@@ -15,7 +15,7 @@ var webSocketAddress = "ws://192.168.1.200:8080";
  * By SysError99
  * 
  * Released under GPLv3 License.
- */ 
+ */
 /**
  * Audio variable
  */
@@ -23,7 +23,7 @@ var audio = null;
 /**
  * Network events
  */
- var events = [];
+var events = [];
 /**
  * Full screen parameter.
  */
@@ -81,7 +81,7 @@ function audioStop() {
 	if (isApp() === 0) {
 		fullScreenObj.lock = true;
 		closeFullScreen();
-		alert(str);
+		fnAlert(str);
 		fullScreenObj.lock = false;
 		fullScreen();
 	} else
