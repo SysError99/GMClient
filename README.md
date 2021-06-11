@@ -7,9 +7,11 @@ This plugin mainly supports majority of browsers, some features of Cordova and i
 # Notes for Cordova
 If you want to export the project for Cordova, these are required to operate the app correctly:
  - [cordova-ios-fullscreen](https://github.com/innowatio/cordova-ios-fullscreen.git) (iOS)
- - cordova-plugin-fullscreen (Android)
- - cordova-plugin-screen-orientation
  - cordova-plugin-viewport
+
+If you want full-screen on Android, simply put `<preference name="Fullscreen" value="true" />` inside of `<widget>` inside `config.xml` project file.
+
+If you want fixed orientation simply put `<preference name="Orientation" value="landscape" />` inside of `<widget>` inside `config.xml` project file. `landscape` can be anything supported (like `portrait` for example).
 
 ---
 # Usage
