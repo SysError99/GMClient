@@ -4,7 +4,7 @@
  * If you want to make the app high-res mode for your app.
  * It could mess up when you dynamically assigns the resolution!
  */
-var highDPI = false;
+var highDPI = true;
 /**
  * Assign your server URL address here!
  */
