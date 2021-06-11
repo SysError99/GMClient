@@ -27,6 +27,15 @@ There are plenty of command you can use in GML, as shown below:
 This section indicates all configuration being made inside of `./client/client.js`
 
 1. `highDPI` (boolean) Enables high-resolution mode for canvas.
+2. `orientationMode` Set orientation mode.
+ * "any"
+ * "natural"
+ * "landscape"
+ * "portrait"
+ * "portrait-primary"
+ * "portrait-secondary"
+ * "landscape-primary"
+ * "landscape-secondary"
 2. `webSocketAddress` (string) Server URL for networking interaction.
 
 ## GML References
