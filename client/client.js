@@ -1,4 +1,21 @@
 
+// - - - - - - - - - - Configuration - - - - - - - - - -
+/**
+ * If you want to make the app high-res mode for your app.
+ * It could mess up when you dynamically assigns the resolution!
+ */
+var highDPI = false;
+/**
+ * Assign your server URL address here!
+ */
+var webSocketAddress = "ws://192.168.1.200:8080";
+
+/**
+ * GMClient JavaScript
+ * By SysError99
+ * 
+ * Released under GPLv3 License.
+ */ 
 /**
  * Audio variable
  */
@@ -26,15 +43,6 @@ var network = null;
 };
 var touches = [];
 var touch_log = {};
-/*
- * Server IP Address
- */
-var webSocketAddress = "ws://192.168.1.200:8080";
-
-// - - - configure DPI on-the-fly
-var viewport = document.querySelector("meta[name=viewport]");
-
-viewport.setAttribute("content", "user-scalable=no, initial-scale=0.75, maximum-scale=1, minimum-scale=0.75, width=device-width, height=device-height, target-densitydpi=device-dpi");
 
 // - - - - - - - - - - Audio - - - - - - - - - -
 /**
@@ -51,7 +59,7 @@ viewport.setAttribute("content", "user-scalable=no, initial-scale=0.75, maximum-
  * Stop audio play.
  */
 function audioStop() {
-	if(audio!=null) {
+	if (audio!=null) {
 		audio.pause();
 		audio.currentTime = 0;
 	}
@@ -238,7 +246,7 @@ function networkOpen(){
  * Get a network event.
  */
 function networkReceive() {
-	if(events.length > 0)
+	if (events.length > 0)
 		return events.shift();
 	else
 		return "";
@@ -249,8 +257,8 @@ function networkReceive() {
  * @param {string} data JSON string
  */
 function networkSend(data) {
-	if(network !== null)
-		if(network.readyState === 1)
+	if (network !== null)
+		if (network.readyState === 1)
 			network.send(data);
 }
 
@@ -260,10 +268,10 @@ function networkSend(data) {
  * @returns {number} Is is an application, or browser (0)
  */
  function isApp() {
-	if(typeof App !== "undefined")
-		return 1;
-	else 
-		return 0;
+	if (typeof App !== "undefined")
+		return 1; 
+
+	return 0;
 }
 
 // - - - - - - - - - - Multi-Touch - - - - - - - - - -
@@ -436,4 +444,11 @@ function touchClean() {
             touchIndex--;
         }
     }
+}
+
+// - - - - - - - - - configure DPI - - - - - - - - -
+if (highDPI) {
+	var viewport = document.querySelector("meta[name=viewport]");
+
+	viewport.setAttribute("content", "user-scalable=no, initial-scale=0.75, maximum-scale=1, minimum-scale=0.75, width=device-width, height=device-height, target-densitydpi=device-dpi");
 }

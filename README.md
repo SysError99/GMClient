@@ -13,6 +13,15 @@ If you want to use this extension for networking via WebSocket, just change netw
 # References
 There are plenty of command you can use in GML, as shown below:
 
+## Configuration
+This section indicates all configuration being made inside of `./client/client.js`
+
+1. `highDPI` (boolean) Enables high-resolution mode for canvas.
+2. `webSocketAddress` (string) Server URL for networking interaction.
+
+## GML References
+This section indicates all GML functions can be used.
+
 ### Audio
 This category indicates functions related to media audio player.
 1. `audio_play(url_file_location:string)` Plays audio as `Media`. (any medias or this can be interrupted by this or another media)
