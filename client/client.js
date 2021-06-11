@@ -5,11 +5,7 @@
  * It could mess up when you dynamically assigns the resolution!
  */
 var highDPI = true;
-/**
- * Assign your server URL address here!
- */
-var webSocketAddress = "ws://192.168.1.200:8080";
-
+// - - - - - - - - - - - - - - - - - - - - - - - - - - -
 /**
  * GMClient JavaScript
  * By SysError99
@@ -219,8 +215,8 @@ function saveData(loc,data) {
 /**
  * Connect to server.
  */
-function networkOpen(){
-	network = new WebSocket(webSocketAddress);
+function networkOpen(wsAddress){
+	network = new WebSocket(wsAddress);
 	network.addEventListener("open", function(){
 		events.push("connected");
 	});

@@ -5,13 +5,27 @@ This plugin mainly supports majority of browsers, some features of Cordova and i
 
 ---
 # Notes for Cordova
-If you want to export the project for Cordova, these are required to operate the app correctly:
+You can configurehis section mostly applies to mobile platform (Android and iOS) only, as shown below:
+
+## Config.XML file
+There are some of configurations inside `<widget>` tag of `config.xml` file. These below are the required in order to make your app function properly.
+1. Fixed orientation, strict your game orientation mode, works on every platforms.
+```xml
+<preference name="Orientation" value="landscape" />
+```
+2. Full-screen mode (Android), make your game in 'immersive mode'.
+```xml
+<preference name="Fullscreen" value="true" />
+```
+3. High-DPI mode (iOS), to prevent low-resolution when scaling your game.
+```xml
+<preference name="EnableViewportScale" value="true"/>
+```
+
+## Plug-ins
+If you want to export the project with Cordova, these are plug-ins required to operate the app correctly.
  - [cordova-ios-fullscreen](https://github.com/innowatio/cordova-ios-fullscreen.git) (iOS)
- - cordova-plugin-viewport
-
-If you want full-screen on Android, simply put `<preference name="Fullscreen" value="true" />` inside of `<widget>` inside `config.xml` project file.
-
-If you want fixed orientation simply put `<preference name="Orientation" value="landscape" />` inside of `<widget>` inside `config.xml` project file. `landscape` can be anything supported (like `portrait` for example).
+ - cordova-plugin-viewport (Android), for high-DPI mode.
 
 ---
 # Usage
@@ -27,18 +41,7 @@ There are plenty of command you can use in GML, as shown below:
 
 ## Configuration
 This section indicates all configuration being made inside of `./client/client.js`
-
 1. `highDPI` (boolean) Enables high-resolution mode for canvas.
-2. `orientationMode` Set orientation mode.
- * "any"
- * "natural"
- * "landscape"
- * "portrait"
- * "portrait-primary"
- * "portrait-secondary"
- * "landscape-primary"
- * "landscape-secondary"
-2. `webSocketAddress` (string) Server URL for networking interaction.
 
 ## GML References
 This section indicates all GML functions can be used.
@@ -64,7 +67,7 @@ This category indicates functions for load and save strings into browser's local
 
 ### Networking
 This category indicates functions for communicating with a web server via WebSocket.
-1. `network_open()` Connect to a server with an address specified inside of file `./client/client.js`.
+1. `network_open(addr:string)` Connect to a server with a specified address.
 2. `network_receive()` Retreives any message that server have sent to the client. You should put this command inside `Step` loop to continuously retrieve anything from the server or connection status. Returns empty string when there is nothing happend. Returns connection status when there is a report of connection status. Returns string of data when there is some data received from a server.
 
 Connection Status:
