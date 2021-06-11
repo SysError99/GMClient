@@ -137,7 +137,7 @@ function dialogPrompt(name, str) {
  */
  function fullScreen() {
 	if (isApp() === 0) {
-		if (!isFullScreen() && !fullScreenObj.lock) {
+		if (!fullScreenObj.lock) {
 			var canvas = document.getElementById("canvas");
 
 			if (canvas.requestFullscreen)
@@ -154,7 +154,7 @@ function dialogPrompt(name, str) {
             return 1;
 	}
 
-    return 0;
+    return 1;
 }
 
 /**
