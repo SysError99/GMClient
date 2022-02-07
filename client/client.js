@@ -221,7 +221,15 @@ function networkOpen(wsAddress){
 		events.push("connected");
 	});
 	network.addEventListener("message", function(e){
-		events.push(e.data);
+		switch (e.data) {
+			case "connected":
+			case "error":
+			case "close":
+				return;
+			default:
+				events.push(e.data);
+				break;
+		}
 	});
 	network.addEventListener("error",function(){
 		events.push("error");
