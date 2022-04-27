@@ -5,7 +5,7 @@ This plugin mainly supports majority of browsers, some features of Cordova and i
 
 ---
 # Notes for Cordova
-You can configurehis section mostly applies to mobile platform (Android and iOS) only, as shown below:
+This section mostly applies to mobile platform (Android and iOS) only.
 
 ## Config.XML file
 There are some of configurations inside `<widget>` tag of `config.xml` file. These below are the required in order to make your app function properly.
