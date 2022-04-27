@@ -55,8 +55,22 @@ This category indicates functions related to media audio player.
 This category indicates functions related to browesr, necessary if this game is running via SysError99's WebApp
 1. `browser_reload()` Reloads a browser.
 2. `dialog_alert(text:string)` Shows native dialog. This returns void.
-3. `dialog_confirm(text:string ,hint:string)` Shows confirmation dialog. This returns text. But if this is 
-4. `dialog_prompt(text:string, default:string)` Shows prompt dialog.
+3. `dialog_confirm(text:string ,hint:string)` Shows confirmation dialog. This returns boolean, but if this runs on SysError99's WebApp, this will not return anything. You will need to retrieve value via `network_receive()` instead. The event will be pushed as text of JSON object, like below:
+```json
+{
+  "res": "NATIVE_confirm",
+  "name": {{dialog_name}},
+  "data": {{true/false}}
+}
+```
+4. `dialog_prompt(text:string, default:string)` Shows prompt dialog. This returns text, but if this runs on SysError99's WebApp, this will not return anything. You will need to retrieve value via `network_receive()` instead. The event will be pushed as text of JSON object, like below:
+```json
+{
+  "res": "NATIVE_prompt",
+  "name": {{dialog_name}},
+  "data": {{user_input}}
+}
+```
 5. `full_screen()` Triggers canvas full-screen mode for the canvas. Returns 1 (number) if full-screen is successful, and 0 (number) if failed. (unreliable if in `highDPI`)
 6. `is_full_screen()` Checks if the screen is full-screen, 1 if true, and 0 if false. (unreliable if in `highDPI`)
 
@@ -105,7 +119,7 @@ This category indicates only one function. `is_app()` checks if this app is runn
 This category indicates multi-touch functions.
 Example:
 ```javascript
-// Put this function inside 'Step' Event~
+// Put this function inside 'Step' Event.
 touch_invoke(room_width,room_height); //start touch instance with defined screen resolution.
 
 var touch_start_id;
