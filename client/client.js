@@ -4,7 +4,7 @@
  * If you want to make the app high-res mode for your app.
  * It could mess up when you dynamically assigns the resolution!
  */
-var highDPI = true;
+var hiDpi = true;
 // - - - - - - - - - - - - - - - - - - - - - - - - - - -
 /**
  * GMClient JavaScript
@@ -445,9 +445,15 @@ function touchClean() {
     }
 }
 
-// - - - - - - - - - Configure DPI - - - - - - - - -
-if (highDPI) {
-	var viewport = document.querySelector("meta[name=viewport]");
+/**
+ * Fix screen DPI
+ */
+function fixDpi() {
+	// reference: https://docs.xgasoft.com/posts/xtend-html5-pixel-ratio-fix/
+	document.querySelector("meta[name=viewport]").setAttribute('content', 'width=device-width, initial-scale='+(1/window.devicePixelRatio)+', maximum-scale=1.0, user-scalable=0');
+}
 
-	viewport.setAttribute("content", "user-scalable=no, initial-scale=0.75, maximum-scale=1, minimum-scale=0.75, width=device-width, height=device-height, target-densitydpi=device-dpi");
+// - - - - - - - - - Configure DPI - - - - - - - - -
+if (hiDpi) {
+	fixDpi();
 }
