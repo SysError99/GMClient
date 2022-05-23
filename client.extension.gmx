@@ -102,6 +102,15 @@
           <args/>
         </function>
         <function>
+          <name>fix_dpi</name>
+          <externalName>fixDpi</externalName>
+          <kind>11</kind>
+          <help>()</help>
+          <returnType>2</returnType>
+          <argCount>-1</argCount>
+          <args/>
+        </function>
+        <function>
           <name>full_screen</name>
           <externalName>fullScreen</externalName>
           <kind>11</kind>
